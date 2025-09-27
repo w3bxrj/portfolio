@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RJ's Portfolio</title>
+  <meta name="description" content="RJ's personal portfolio showcasing projects, education, and contact links.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html { font-size: 63%; scroll-behavior: smooth; }
+    body { background: #000; color: #e0f7fa; overflow-x: hidden; }
+
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      padding: 1rem 9%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: #161616;
+      border-bottom: 2px solid #b74b4b;
+    }
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #b74b4b;
+    }
+
+    #menu-toggle { display: none; }
+    .menu-icon {
+      display: none;
+      font-size: 2.5rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+    nav a {
+      font-size: 1.6rem;
+      color: white;
+      transition: 0.3s;
+    }
+    nav a:hover, nav a.active {
+      color: #b74b4b;
+      border-bottom: 2px solid #b74b4b;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 7rem 9% 5rem;
+    }
+    .home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6rem;
+    }
+    .pfp img {
+      width: 32vw;
+      border-radius: 50%;
+      box-shadow: 0 0 25px #b74b4b;
+      transition: transform 0.3s;
+    }
+    .pfp img:hover { transform: scale(1.05); }
+
+    .homeIntro h1 { font-size: 6rem; font-weight: 700; }
+    .homeIntro h3 { font-size: 3rem; margin: 1rem 0; }
+    span { color: #b74b4b; }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2.8rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.2rem;
+      color: #b74b4b;
+      border: 2px solid #b74b4b;
+      border-radius: 3rem;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #b74b4b;
+      color: #000;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #b74b4b;
+    }
+
+    .projects h3,
+    #qual h3,
+    .contact h3 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .projects .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: #161616;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(183, 75, 75, 0.4);
+    }
+
+    #qual ul {
+      list-style: none;
+      max-width: 600px;
+      margin: auto;
+    }
+    #qual li { margin-bottom: 1.5rem; }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .socials a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 4rem; height: 4rem;
+      border: 2px solid #b74b4b;
+      border-radius: 50%;
+      color: #b74b4b;
+      font-size: 2rem;
+      transition: 0.3s;
+    }
+    .socials a:hover {
+      background: #b74b4b;
+      color: #000;
+      transform: scale(1.2);
+      box-shadow: 0 0 15px #b74b4b;
+    }
+
+    .homeBio span { position: relative; }
+    .homeBio span::before {
+      content: "Frontend Developer";
+      color: #b74b4b;
+      animation: words 20s infinite;
+    }
+    .homeBio span::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background: #b74b4b;
+      animation: blink 0.8s steps(2, start) infinite;
+      right: -5px; top: 0;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes words {
+      0%, 20% { content: "Frontend Developer"; }
+      21%, 40% { content: "Web Designer"; }
+      41%, 60% { content: "Problem Solver"; }
+      61%, 80% { content: "Coder"; }
+      81%, 100% { content: "Learner"; }
+    }
+
+    @media (max-width: 900px) {
+      .home { flex-direction: column; text-align: center; }
+      .pfp img { width: 60vw; }
+    }
+    @media (max-width: 768px) {
+      .menu-icon { display: block; }
+      nav {
+        position: absolute;
+        top: 100%; right: 0;
+        background: #161616;
+        flex-direction: column;
+        width: 200px;
+        border-left: 2px solid #b74b4b;
+        padding: 1rem;
+        display: none;
+      }
+      #menu-toggle:checked + .menu-icon + nav {
+        display: flex;
+      }
+      nav a { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">RJ's Portfolio</a>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">☰</label>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#qual">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="home">
+    <div class="pfp">
+      <img src="https://img.freepik.com/premium-photo/portrait-successful-programmer-game-developer-coder-guy-uses-computer-laptop-work-game-design-hacker-boy-generative-ai-gamer-headphones_117038-7598.jpg?w=740" alt="RJ - Developer">
+    </div>
+    <div class="homeIntro">
+      <h1>Hi, I'm <span>RJ</span></h1>
+      <h3 class="homeBio">I'm a <span></span></h3>
+      <p>I am an aspiring web developer with a strong foundation in HTML, CSS, and a Learner in JavaScript. I have a keen interest in building responsive, accessible, and user-friendly websites. My goal is to continuously enhance my technical expertise and contribute to developing innovative digital solutions.</p>
+      <a href="#contact" class="btn">Connect with Me</a>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <h3>Projects</h3>
+    <div class="grid">
+      <div class="card">
+        <a href="project1.html"><h4>Profile Card</h4></a>
+        <p>This project demonstrates a simple CSS card design using HTML and internal CSS. The card includes an image, category tags, descriptive text, and a styled button. It showcases the use of modern fonts, hover effects, and a clean layout to create an interactive and visually appealing component.</p>
+      </div>
+      <div class="card">
+        <a href="project2.html"><h4>Bouncing Ball Animation with BG Transition</h4></a>
+        <p>This project uses HTML and CSS animations to create a bouncing ball effect with dynamic color transitions. The ball moves horizontally and vertically while changing colors, and the background smoothly shifts between multiple shades, showcasing the use of CSS keyframes and animation properties.</p>
+      </div>
+      <div class="card">
+        <a href="project3.html"><h4>Solar System Animation with Pure HTML & CSS</h4></a>
+        <p>This project visually represents the solar system using only HTML and CSS. The sun and planets are styled with gradients, orbit paths, and smooth keyframe animations to simulate planetary motion. It demonstrates the use of CSS variables, transformations, and animations to create an engaging space-themed visualization.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="qual">
+    <h3>Qualification</h3>
+    <ul>
+      <li>
+        <h4>Scaler School Of Technology</h4>
+        <p><em>2025 - 2029</em></p>
+      </li>
+      <li>
+        <h4>BITS Pilani – BSc. Computer Science</h4>
+        <p><em>2025 - 2029</em></p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="contact" id="contact">
+    <h3>Connect</h3>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/w3bxrj/" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+      <a href="https://github.com/w3bxrj" aria-label="GitHub"><i class="fa fa-github"></i></a>
+    </div>
+  </section>
+</body>
+</html>
