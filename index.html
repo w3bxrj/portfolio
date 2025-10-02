@@ -26,7 +26,8 @@
     body { 
       background: #000; 
       color: #e0f7fa; 
-      overflow-x: hidden; }
+      overflow-x: hidden; 
+    }
 
     header {
       position: fixed;
@@ -46,7 +47,9 @@
       color: #b74b4b;
     }
 
-    #menu-toggle { display: none; }
+    #menu-toggle { 
+      display: none; 
+    }
     .menu-icon {
       display: none;
       font-size: 2.5rem;
@@ -84,7 +87,9 @@
       box-shadow: 0 0 25px #b74b4b;
       transition: transform 0.3s;
     }
-    .pfp img:hover { transform: scale(1.05); }
+    .pfp img:hover { 
+      transform: scale(1.05); 
+    }
 
     .homeIntro h1 {
   font-size: 5rem;
@@ -108,9 +113,17 @@
 }
 
 
-.homeIntro h1 { font-size: 6rem; font-weight: 700; }
-.homeIntro h3 { font-size: 3rem; margin: 1rem 0; }
-span { color: #b74b4b; }
+.homeIntro h1 { 
+  font-size: 6rem; 
+  font-weight: 700;
+}
+.homeIntro h3 { 
+  font-size: 3rem;
+  margin: 1rem 0; 
+}
+span { 
+  color: #b74b4b; 
+}
 
 .btn {
   display: inline-block;
@@ -259,10 +272,21 @@ span { color: #b74b4b; }
   box-shadow: 0 0 25px #b74b4b;
 }
 @media (max-width: 768px) {
-  .timeline::before { left: 20px; }
-  .timeline-item { flex-direction: column; gap: 1rem; }
-  .timeline-icon { width: 50px; height: 50px; font-size: 1.8rem; }
-  .timeline-content { padding: 1.5rem; }
+  .timeline::before { 
+    left: 20px; 
+  }
+  .timeline-item { 
+    flex-direction: column; 
+    gap: 1rem; 
+  }
+  .timeline-icon { 
+    width: 50px; 
+    height: 50px;
+    font-size: 1.8rem;
+  }
+  .timeline-content { 
+    padding: 1.5rem;
+  }
 }
 
 .contact {
@@ -354,7 +378,9 @@ span { color: #b74b4b; }
 
 
 
-.homeBio span { position: relative; }
+.homeBio span { 
+  position: relative; 
+}
 .homeBio span::before {
   content: "Frontend Developer";
   color: #b74b4b;
@@ -370,36 +396,78 @@ span { color: #b74b4b; }
   right: -5px; top: 0;
 }
 @media (max-width: 900px) {
-  .homeIntro h1 { font-size: 4rem; }
-  .homeIntro h3 { font-size: 2.2rem; }
-  .homeIntro p { font-size: 1.6rem; }
+  .homeIntro h1 {
+    font-size: 4rem; 
+  }
+  .homeIntro h3 { 
+    font-size: 2.2rem;
+  }
+  .homeIntro p { 
+    font-size: 1.6rem; 
+  }
 }
 
 @media (max-width: 768px) {
-  .homeIntro h1 { font-size: 3.2rem; }
-  .homeIntro h3 { font-size: 1.8rem; }
-  .homeIntro p { font-size: 1.5rem; }
+  .homeIntro h1 {
+    font-size: 3.2rem; 
+  }
+  .homeIntro h3 { 
+    font-size: 1.8rem; 
+  }
+  .homeIntro p { 
+    font-size: 1.5rem; 
+  }
 }
 
 @media (max-width: 768px) {
-  .contact-container { flex-direction: column; align-items: center; gap: 3rem; }
-  .socials { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+  .contact-container {
+    flex-direction: column; 
+    align-items: center; 
+    gap: 3rem; 
+  }
+  .socials { 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 1.5rem; 
+  }
 }
-@keyframes blink { 50% { opacity: 0; } }
+@keyframes blink { 
+  50% {
+    opacity: 0; 
+  } 
+}
 @keyframes words {
-  0%, 20% { content: "Frontend Developer"; }
-  21%, 40% { content: "Web Designer"; }
-  41%, 60% { content: "Problem Solver"; }
-  61%, 80% { content: "Coder"; }
-  81%, 100% { content: "Learner"; }
+  0%, 20% {
+    content: "Frontend Developer"; 
+  }
+  21%, 40% { 
+    content: "Web Designer";
+  }
+  41%, 60% { 
+    content: "Problem Solver"; 
+  }
+  61%, 80% {
+    content: "Coder"; 
+  }
+  81%, 100% { 
+    content: "Learner"; 
+  }
 }
 
 @media (max-width: 900px) {
-  .home { flex-direction: column; text-align: center; }
-  .pfp img { width: 60vw; }
+  .home { 
+    flex-direction: column; 
+    text-align: center; 
+  }
+  .pfp img {
+    width: 60vw; 
+  }
 }
 @media (max-width: 768px) {
-  .menu-icon { display: block; }
+  .menu-icon { 
+    display: block;
+  }
   nav {
     position: absolute;
     top: 100%; right: 0;
@@ -413,7 +481,9 @@ span { color: #b74b4b; }
       #menu-toggle:checked + .menu-icon + nav {
         display: flex;
       }
-      nav a { padding: 1rem; }
+      nav a {
+        padding: 1rem; 
+      }
     }
   </style>
 </head>
@@ -516,4 +586,5 @@ span { color: #b74b4b; }
 
 </body>
 </html>
+
 
